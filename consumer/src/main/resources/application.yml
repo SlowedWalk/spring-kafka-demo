@@ -1,0 +1,14 @@
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: wikiGroup
+      auto-offset-reset: earliest
+#      key-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer # for json data
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer # for json data
+#      properties:
+#        spring.json.trusted.packages: '*'
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer # for string data
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer # for string data
+server:
+  port: 8082
