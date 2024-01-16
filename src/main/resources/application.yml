@@ -1,0 +1,22 @@
+
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: demo01
+      auto-offset-reset: earliest
+      key-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer # for json data
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer # for json data
+      properties:
+        spring.json.trusted.packages: '*'
+    #      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer # for string data
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer # for string data
+
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.springframework.kafka.support.serializer.JsonSerializer # for string data
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer # for string data
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer # for string data
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer # for string data
+server:
+  port: 8081
